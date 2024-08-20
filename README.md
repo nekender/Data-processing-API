@@ -1,41 +1,55 @@
-API Documentation
-Overview
-This API provides tools to upload CSV files, generate summary statistics, and query specific rows. It is built using Flask and Pandas.
+# API Documentation
 
-Requirements
-Ensure you have Python installed on your machine, then install the necessary packages:
+This API provides functionalities to upload CSV files, generate statistical summaries, and query data. Follow the steps below to set up and use the API.
 
-bash
-Copy code
-pip install flask pandas
-How to Use
-Run the Flask App:
+## Installation
 
-Start the API by running the following command:
+1. Install the required packages:
+    ```bash
+    pip install flask pandas
+    ```
 
-bash
-Copy code
-python app.py
-The API will now be available at the specified address (e.g., http://localhost:5000).
+2. Run the Flask app:
+    ```bash
+    python app.py
+    ```
 
-Authorization:
+## Usage
 
-To authorize, follow these steps:
+After running the Flask app, the API will be available. Follow the steps below to authorize and use the endpoints.
 
-Look for the "Authorize" button at the top right of the API documentation page (represented by a lock icon).
-Click on the "Authorize" button to open a pop-up window.
-In the pop-up window, enter your API key (othor) in the field labeled "Value" under "apikey (apiKey)".
-Click the "Authorize" button in the pop-up and close the window. You are now authorized to use the API.
-Using the Endpoints:
+### Authorization
+
+1. Look for the "Authorize" button at the top right of the API documentation page. It should appear as a lock icon.
+2. Click on the "Authorize" button to open a pop-up window.
+3. In the pop-up, locate the field labeled "Value" under "apikey (apiKey)".
+4. Enter your API key (`othor`) in this field.
+5. Click the "Authorize" button in the pop-up and then close it. You are now authorized to use the API.
+
+### Endpoints
 
 The API provides three main endpoints:
 
-/upload: Upload a CSV file for summary and querying.
-/stats: Get statistics of all numerical columns in the uploaded CSV.
-/query: Specify a column name and value to retrieve the corresponding row.
-To interact with each endpoint:
+1. **Upload CSV File**
+    - **Endpoint:** `/upload`
+    - **Description:** Upload a CSV file for summary and querying.
 
-Click on the endpoint you wish to use.
-Click the "Try it out" button.
-Fill in the necessary details.
-Click the "Execute" button to run the request
+2. **Get Statistics**
+    - **Endpoint:** `/stats`
+    - **Description:** Retrieve statistics for all numerical columns in the uploaded CSV file.
+
+3. **Query Data**
+    - **Endpoint:** `/query`
+    - **Description:** Specify a column name and value to retrieve the corresponding row from the uploaded CSV file.
+
+### Running Endpoints
+
+To run each endpoint:
+
+1. Click on the endpoint in the API documentation.
+2. Click on the "Try it out" button.
+3. Fill in the required parameters (if any) and click "Execute" to run the endpoint.
+
+## Conclusion
+
+You should now be able to use the API for uploading CSV files, getting statistics, and querying data. Make sure to authorize yourself using the API key before accessing the endpoints.
