@@ -90,6 +90,11 @@ class QueryData(Resource):
         args = query_parser.parse_args()
         column = args['column']
         value = args['value']
+
+        numeric_cols=data_storage.select_dtypes(include=[np.number]).columns
+        
+        if column in numeric_cols:
+            value=int(value)
         
         if column not in data_storage.columns:
             api.abort(400, f"Column '{column}' not found")
