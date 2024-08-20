@@ -17,20 +17,15 @@ authorizations = {
 api = Api(app, version='1.0', title='Data Processing API',
           description='A simple API for data ingestion and processing',
           authorizations=authorizations,
-          security='apikey')  # This line makes the API key global for all endpoints
+          security='apikey')
 
-# In-memory storage for the uploaded data
 data_storage = None
-
-# Simple API key for authentication
 API_KEY = "othor"
 
-# Define namespaces
 ns_upload = api.namespace('upload', description='Data upload operations')
 ns_stats = api.namespace('stats', description='Data statistics operations')
 ns_query = api.namespace('query', description='Data query operations')
 
-# Define models
 upload_parser = api.parser()
 upload_parser.add_argument('file', location='files', type=FileStorage, required=True)
 
@@ -38,7 +33,6 @@ query_parser = api.parser()
 query_parser.add_argument('column', type=str, required=True, help='Column name to filter')
 query_parser.add_argument('value', type=str, required=True, help='Value to filter by')
 
-# Decorator for API key authentication
 def require_api_key(func):
     def check_api_key(*args, **kwargs):
         if request.headers.get('X-API-Key') and request.headers.get('X-API-Key') == API_KEY:
