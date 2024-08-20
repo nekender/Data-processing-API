@@ -16,7 +16,7 @@ This API provides functionalities to upload CSV files, generate statistical summ
 
 ## Usage
 
-After running the Flask app, the API will be available. Follow the steps below to authorize and use the endpoints.
+After running the Flask app, the API will be available at http://127.0.0.1:5000/. Follow the steps below to authorize and use the endpoints.
 
 ### Authorization
 
