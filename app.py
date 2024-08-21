@@ -93,11 +93,11 @@ class QueryData(Resource):
 
         numeric_cols=data_storage.select_dtypes(include=[np.number]).columns
         
-        if column in numeric_cols:
-            value=int(value)
-        
         if column not in data_storage.columns:
             api.abort(400, f"Column '{column}' not found")
+            
+        if column in numeric_cols:
+            value=int(value)
         
         filtered_data = data_storage[data_storage[column] == value]
         return filtered_data.to_dict(orient='records')
